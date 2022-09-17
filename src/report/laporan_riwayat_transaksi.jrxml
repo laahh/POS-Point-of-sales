@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8e0c9805-cd22-4eec-a7ba-22d3937f3701">
+	<property name="ireport.zoom" value="1.7715610000000088"/>
+	<property name="ireport.x" value="171"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT * FROM transaksi t JOIN users u ON t.id_user=u.id_user WHERE YEAR(t.tanggal)=YEAR(CURDATE())]]>
+	</queryString>
+	<field name="id_transaksi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tanggal" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_user" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_harga" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nominal" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_user" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="username" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="password_user" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="gender" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="role" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="total_harga_1" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{total_harga}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="26" forecolor="#1E1E2E" uuid="3b82b278-180b-40bf-916d-42381e6ee4e8"/>
+				<textElement textAlignment="Center">
+					<font fontName="Quicksand" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sholehan Photocopy Mengen]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="26" width="555" height="26" forecolor="#1E1E2E" uuid="4afa07b9-013e-48bd-b4d7-d06dff4ecd96"/>
+				<textElement textAlignment="Center">
+					<font fontName="Quicksand" size="15" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Jl. Sukowono No. 1 - Desa Mengen]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="52" width="555" height="26" forecolor="#1E1E2E" uuid="d21fb06d-06eb-4d28-97f7-e6530e886a24"/>
+				<textElement textAlignment="Center">
+					<font fontName="Quicksand" size="15" isBold="false"/>
+				</textElement>
+				<text><![CDATA[No. Telp. +62 822-2558-7226]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="14" width="200" height="20" forecolor="#1E1E2E" uuid="3a15bda4-ff92-403c-8c42-5c6233c1816d"/>
+				<textElement>
+					<font fontName="Quicksand" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Laporan Riwayat Transaksi Tahun]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="200" y="14" width="100" height="20" forecolor="#1E1E2E" uuid="8ded46e3-6282-4ed2-a1e9-d41397b09dcd"/>
+				<textElement>
+					<font fontName="Quicksand" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("yyyy").format($F{tanggal})]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="24" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="20" forecolor="#FFFFFF" backcolor="#0061F2" uuid="b87ba423-56e3-4118-80fb-7da70b242a31"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="40" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="393e00d0-0f54-4c16-a18e-9310cafbd245"/>
+				<textElement>
+					<font fontName="Quicksand" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID Transaksi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="148" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="f256cba0-429b-4509-b4f6-fcd749311030"/>
+				<textElement>
+					<font fontName="Quicksand" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Pegawai]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="351" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="04b842ec-f21f-442f-99c7-0284c93c7a18"/>
+				<textElement>
+					<font fontName="Quicksand" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Harga]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="451" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="28e7aa62-3578-4f99-a078-72d6bc34a93b"/>
+				<textElement>
+					<font fontName="Quicksand" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nominal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="40" height="20" forecolor="#FFFFFF" uuid="2ea01e2d-5fcd-4f23-bc2b-4285937e9e82"/>
+				<textElement>
+					<font fontName="Quicksand" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="249" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="855a34de-2d3b-4d96-8334-f24fa3b1e9b4"/>
+				<textElement>
+					<font fontName="Quicksand" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tanggal]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="20" width="555" height="1" forecolor="#1E1E2E" uuid="ad6b78a8-b43d-435f-8b77-47fb9ba2ee26"/>
+			</line>
+			<textField>
+				<reportElement x="40" y="0" width="100" height="20" forecolor="#1E1E2E" uuid="7eb2bb9c-bf02-4689-8e67-e2c792180ad3"/>
+				<textElement>
+					<font fontName="Quicksand" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id_transaksi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="148" y="0" width="100" height="20" forecolor="#1E1E2E" uuid="bd36dfe6-0e9f-498a-b21e-3de0aa1e2a48"/>
+				<textElement>
+					<font fontName="Quicksand" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_user}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="249" y="0" width="100" height="20" forecolor="#1E1E2E" uuid="bf5792c2-ea78-4b00-80ea-bc5ad1b71f42"/>
+				<textElement>
+					<font fontName="Quicksand" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("yyyy-MM-dd").format($F{tanggal})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="351" y="0" width="100" height="20" forecolor="#1E1E2E" uuid="d6670a12-bf58-421a-b8d2-4d943c50fb62"/>
+				<textElement>
+					<font fontName="Quicksand" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total_harga}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="451" y="0" width="100" height="20" forecolor="#1E1E2E" uuid="b7a6162f-9e1e-4ce1-afc1-5cd4d51d9fed"/>
+				<textElement>
+					<font fontName="Quicksand" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nominal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="40" height="20" forecolor="#1E1E2E" uuid="e9e27f1b-5e29-468d-9969-c53d2e67e304"/>
+				<textElement>
+					<font fontName="Quicksand" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement x="159" y="0" width="100" height="20" forecolor="#1E1E2E" uuid="f6abc1e9-1cf8-4eb6-b7b4-a50c187ea96b"/>
+				<textElement>
+					<font fontName="Quicksand" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total_harga_1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="159" height="20" forecolor="#1E1E2E" uuid="5cb9089c-775e-4f05-95a4-4e3d1efddb3d"/>
+				<textElement>
+					<font fontName="Quicksand" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Total Harga Keseluruhan :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="425" y="0" width="66" height="20" forecolor="#1E1E2E" uuid="0cf84765-ab8e-494b-8c97-8da2f6780bd5"/>
+				<textElement>
+					<font fontName="Quicksand" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Halaman : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="491" y="0" width="64" height="20" forecolor="#1E1E2E" uuid="ae71b3c6-e6a9-4489-a0dc-eb431d346328"/>
+				<textElement>
+					<font fontName="Quicksand" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
